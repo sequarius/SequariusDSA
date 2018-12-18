@@ -13,5 +13,5 @@ public interface Iterator<T> {
      *
      * @return The next element, return null if has no element next
      */
-    T getNext();//返回迭代器中的下一元素
+    T getNext();
 }
