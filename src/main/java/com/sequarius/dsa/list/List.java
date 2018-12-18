@@ -114,8 +114,6 @@ public interface List<T> {
      */
     T removeLast();
 
-    //将处于给定位置的元素替换为新元素，并返回被替换的元素
-
     /**
      * Replace the element at t position.
      *
