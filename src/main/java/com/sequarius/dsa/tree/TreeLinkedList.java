@@ -52,9 +52,9 @@ public class TreeLinkedList<T> implements Tree<T> {
     }
 
     public int getHeight() {
-        int height = -1;
+        int height = Integer.MIN_VALUE;
         TreeLinkedList subtree = firstChild;
-        while (null != subtree) {
+        while (subtree != null) {
             height = Math.max(height, subtree.getHeight());
             subtree = subtree.getNextSibling();
         }
@@ -64,7 +64,7 @@ public class TreeLinkedList<T> implements Tree<T> {
     public int getDepth() {
         int depth = 0;
         TreeLinkedList p = parent;
-        while (null != p) {
+        while (p != null) {
             depth++;
             p = p.getParent();
         }
