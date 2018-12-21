@@ -15,14 +15,14 @@ public interface List<T> {
      *
      * @return The size of the element count.
      */
-    Integer getSize();
+    int getSize();
 
     /**
      * Empty list judge.
      *
      * @return true if there are no element in this list.
      */
-    Boolean isEmpty();
+    boolean isEmpty();
 
     /**
      * The element in the first position.
