@@ -37,9 +37,19 @@ public class ArrayVector<T> implements Vector<T> {
         return bak;
     }
 
+    @SuppressWarnings("unchecked")
     public T insertAtRank(int r, T obj)
             throws ExceptionBoundaryViolation {
-        // TODO: 2018/12/25
+        if (0 > r || r >= elementSize) throw new ExceptionBoundaryViolation(INDEX_OUT_OF_RANGE_MESSAGE);
+        if (r > arraySize) {
+            T[] tempArray = elementArray;
+            elementArray = (T[]) new Object[tempArray.length * 2];
+            System.arraycopy(tempArray, 0, elementArray, 0, tempArray.length);
+        }
+        elementArray[r] = obj;
+        if (r == elementSize - 1) {
+            elementSize++;
+        }
         return obj;
     }
 
